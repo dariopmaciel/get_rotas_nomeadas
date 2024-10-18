@@ -6,7 +6,7 @@ import 'package:get_rotas_nomeadas/pages/envio_parametros/example_page/env_param
 import 'package:get_rotas_nomeadas/pages/envio_parametros/example_page/env_param_page3_querry.dart';
 import 'package:get_rotas_nomeadas/pages/home_page.dart';
 import 'package:get_rotas_nomeadas/pages/inicial/inicial_page1.dart';
-import 'package:get_rotas_nomeadas/pages/middlewares/access_denied.dart';
+import 'package:get_rotas_nomeadas/pages/middlewares/example_page/access_denied.dart';
 import 'package:get_rotas_nomeadas/pages/middlewares/middlewares_home_page.dart';
 import 'package:get_rotas_nomeadas/pages/middlewares/route_middleware.dart';
 import 'package:get_rotas_nomeadas/pages/rota_nao_encontrada/rota_nao_encontrada_page.dart';
