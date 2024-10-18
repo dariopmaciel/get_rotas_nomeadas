@@ -39,7 +39,8 @@ class MyApp extends StatelessWidget {
       ),
       getPages: [
         GetPage(name: '/home', page: () => const HomePage()),
-        GetPage(name: '/inicial/page1', page: () => const InicialPage1()),
+        GetPage(name: '/inicial/page1', page: () => const InicialPage1(),
+        middlewares: [RouteMiddleware()]),
         GetPage(
           name: '/envio_de_parametros',
           page: () => const EnvioParametrosHomePage(),

@@ -31,9 +31,28 @@ class RouteMiddleware extends GetMiddleware {
   @override
   RouteSettings? redirect(String? route) {
     //!Este  redireciona, é invocado ANTES MESMO DE IR PARA A PÁGINA
-    if (route == '/middlewares') {
+    // if (route == '/middlewares') {
+    if (route == '/inicial/page1') {
       return const RouteSettings(name: '/accessDenied');
     }
     return null;
+  }
+
+  @override
+  void onPageDispose() {
+    debugPrint('Executando middleware ONPAGEDISPOSE');
+    super.onPageDispose();
+  }
+
+  @override
+  List<Bindings>? onBindingsStart(List<Bindings>? bindings) {
+    //!usado em gerenciadores de dependencia
+    return super.onBindingsStart(bindings);
+  }
+
+  @override
+  GetPageBuilder? onPageBuildStart(GetPageBuilder? page) {
+    //!usado em gerenciadores de dependencia
+    return super.onPageBuildStart(page);
   }
 }

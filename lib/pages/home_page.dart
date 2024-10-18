@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_rotas_nomeadas/pages/middlewares/route_middleware.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
