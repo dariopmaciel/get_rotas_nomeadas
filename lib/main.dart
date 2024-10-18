@@ -9,6 +9,7 @@ import 'package:get_rotas_nomeadas/pages/inicial/inicial_page1.dart';
 import 'package:get_rotas_nomeadas/pages/middlewares/example_page/access_denied.dart';
 import 'package:get_rotas_nomeadas/pages/middlewares/middlewares_home_page.dart';
 import 'package:get_rotas_nomeadas/pages/middlewares/route_middleware.dart';
+import 'package:get_rotas_nomeadas/pages/nested_navigation/nested_navigation_home_page.dart';
 import 'package:get_rotas_nomeadas/pages/rota_nao_encontrada/rota_nao_encontrada_page.dart';
 
 void main() {
@@ -29,8 +30,8 @@ class MyApp extends StatelessWidget {
       //! É MÉTODO OBSERVABLE GERAL
       // routingCallback: (Routing? routing) {
       routingCallback: (value) {
-        // debugPrint(value?.previous);
-        // debugPrint(value?.current);
+        debugPrint(value?.previous);
+        debugPrint(value?.current);
       },
       theme: ThemeData(
         // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -39,8 +40,10 @@ class MyApp extends StatelessWidget {
       ),
       getPages: [
         GetPage(name: '/home', page: () => const HomePage()),
-        GetPage(name: '/inicial/page1', page: () => const InicialPage1(),
-        middlewares: [RouteMiddleware()]),
+        GetPage(
+            name: '/inicial/page1',
+            page: () => const InicialPage1(),
+            middlewares: [RouteMiddleware()]),
         GetPage(
           name: '/envio_de_parametros',
           page: () => const EnvioParametrosHomePage(),
@@ -61,7 +64,8 @@ class MyApp extends StatelessWidget {
             RouteMiddleware(),
           ],
         ),
-        GetPage(name: '/accessDenied', page: ()=> const AccessDenied())
+        GetPage(name: '/accessDenied', page: () => const AccessDenied()),
+        GetPage(name: '/nested', page: () =>  NestedNavigationHomePage()),
       ],
     );
   }
